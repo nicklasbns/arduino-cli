@@ -94,7 +94,8 @@ func InputUserField(prompt string, secret bool) (string, error) {
 		return "", errors.New(i18n.Tr("user input not supported for the '%s' output format", format))
 	}
 	if !IsInteractive() {
-		return "", errors.New(i18n.Tr("user input not supported in non interactive mode"))
+		// return "", errors.New(i18n.Tr("user input not supported in non interactive mode"))
+		return "", nil
 	}
 
 	fmt.Fprintf(stdOut, "%s: ", prompt)
